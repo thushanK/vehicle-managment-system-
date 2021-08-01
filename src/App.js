@@ -6,10 +6,12 @@ import './custom.css'
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
+import AddVehicle from '../src/funtions/Vehicle/AddVehicle';
+
 function App() {
   return (
     <>
-    <h1>Hi.....</h1>
+    <AddVehicle/>
     </>
   );
 }
