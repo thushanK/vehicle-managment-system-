@@ -1,24 +1,46 @@
 {
-  "name": "vehicle_manager",
+  "name": "timetable_manager",
   "version": "0.1.0",
+  "main": "public/electron.js",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
-    "node-sass": "^6.0.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "chart.js": "^2.9.4",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
+    "filepond": "^4.27.1",
+    "filepond-plugin-file-validate-type": "^1.2.6",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-chartjs-2": "^2.9.0",
+    "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.2",
+    "react-filepond": "^7.1.1",
+    "react-pro-sidebar": "^0.6.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-toastify": "^7.0.4",
-    "sass-loader": "^10.2.0",
-    "web-vitals": "^1.1.2"
+    "react-select": "^4.3.0",
+    "react-toastify": "^7.0.3",
+    "sass": "^1.32.8",
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "npm run react-build && electron-builder --publish=always",
+    "build": "npm run react-build && npm run electron-build",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +59,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
+    "sass-loader": "^7.1.0",
+    "wait-on": "^5.3.0"
   }
 }

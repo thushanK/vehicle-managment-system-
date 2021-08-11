@@ -10,7 +10,7 @@ const Sidebar = ({activemenu, submenu}) => {
      <SidebarContent>
     <Menu iconShape="round">
 
-      <MenuItem 
+    <MenuItem 
         active={activemenu === 'DASHBOARD'} 
         icon={<FontAwesomeIcon icon={faTachometerAlt} />}>
           Dashboard<Link to="/" />
@@ -24,16 +24,14 @@ const Sidebar = ({activemenu, submenu}) => {
         </MenuItem>
       </SubMenu>
 
-      {/* Tag member 1 */}
+      
 
       <MenuItem 
         active={activemenu === 'SETTING'} 
         icon={<FontAwesomeIcon icon={faAtom} />}>
-          Add Tag<Link to="/setting" />
+          SETTING<Link to="/setting" />
       </MenuItem>
-
     </Menu>
-    
     </SidebarContent>
   </ProSidebar>
   );
