@@ -1,5 +1,5 @@
 {
-  "name": "timetable_manager",
+  "name": "vehicle_manager",
   "version": "0.1.0",
   "main": "public/electron.js",
   "private": true,
