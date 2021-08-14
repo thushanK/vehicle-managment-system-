@@ -34,7 +34,8 @@ class ManageVehicle extends React.Component {
                     <thead>
                         <tr>
                         <th className="font-08 text-dark2 ">Vehicle Number</th>
-           
+                        <th className="font-08 text-dark2 ">Vehicle Type</th>
+                        <th className="font-08 text-dark2 ">Vehicle Chase Number</th>
                         </tr>
                     </thead>
                     <tbody>{vehicleList && vehicleList.map((value , i) => this.renderTable(value , i))}</tbody>
@@ -46,16 +47,16 @@ class ManageVehicle extends React.Component {
   </div>
   );}
 
-  renderTable = (building , index) => {
-      console.log(building);
+  renderTable = (vehicle , index) => {
+      console.log(vehicle);
     return (
-                        <tr key={building._id}>
-                            <td>{`B${("00" + (index + 1)).slice(-3)}`}</td>
-                            <td>{building.name}</td>
-                            <td>{building.noOfFloors}</td>
-                            <td>{building.accessTime}</td>
-                            <td><Link to={"/locations/buildings/edit/" + building._id}><span className="badge badge-info rounded-0 bg-white text-success border border-secondary click font-weight-bold ">Edit</span></Link>
-                            <Link to={"/locations/buildings/delete/" + building._id}><span className="badge badge-info rounded-0 bg-white text-danger border border-secondary click font-weight-bold btn-danger ml-2">Delete</span></Link>
+                        <tr key={vehicle._id}>
+                            {/* <td>{`B${("00" + (index + 1)).slice(-3)}`}</td> */}
+                            <td>{vehicle.vehicleNumber}</td>
+                            <td>{vehicle.vehicleType}</td>
+                            <td>{vehicle.vehicleChaseNumber}</td>
+                            <td><Link to={"/locations/vehicles/edit/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-success border border-secondary click font-weight-bold ">Edit</span></Link>
+                            <Link to={"/locations/vehicles/delete/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-danger border border-secondary click font-weight-bold btn-danger ml-2">Delete</span></Link>
                             </td>
                         </tr>
     )
