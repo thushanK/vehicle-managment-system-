@@ -55,8 +55,8 @@ class ManageVehicle extends React.Component {
                             <td>{vehicle.vehicleNumber}</td>
                             <td>{vehicle.vehicleType}</td>
                             <td>{vehicle.vehicleChaseNumber}</td>
-                            <td><Link to={"/locations/vehicles/edit/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-success border border-secondary click font-weight-bold ">Edit</span></Link>
-                            <Link to={"/locations/vehicles/delete/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-danger border border-secondary click font-weight-bold btn-danger ml-2">Delete</span></Link>
+                            <td><Link to={"/vehicle/edit/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-success border border-secondary click font-weight-bold ">Edit</span></Link>
+                            <Link to={"/vehicle/delete/" + vehicle._id}><span className="badge badge-info rounded-0 bg-white text-danger border border-secondary click font-weight-bold btn-danger ml-2">Delete</span></Link>
                             </td>
                         </tr>
     )
