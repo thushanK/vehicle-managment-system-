@@ -6,6 +6,8 @@ import DeleteVehicle from '../funtions/Vehicle/DeleteVehicle';
 import EditVehicle from '../funtions/Vehicle/EditVehicle';
 import ViewVehicle from '../funtions/Vehicle/ViewVehicle';
 
+import AddUser from '../funtions/User/AddUser';
+
 let routes = [
 
     {
@@ -42,6 +44,12 @@ let routes = [
         path: "/vehicle/view/:id",
         name: "ViewVehicle",
         component: ViewVehicle,
+        exact: true,
+    },
+    {
+        path: "/users/add",
+        name: "AddUser",
+        component: AddUser,
         exact: true,
     }
 
